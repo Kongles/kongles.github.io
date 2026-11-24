@@ -1,0 +1,11 @@
+<div class="rail-demo" id="rail-demo" markdown="0" hidden>
+  <label for="rail-mode">센서 종류</label>
+  <select id="rail-mode">
+    <option value="kf">KF · 위치 센서 (6 m 측정)</option>
+    <option value="ekf">EKF · 거리 센서 (5.5 m 측정)</option>
+  </select>
+  <label for="rail-noise">센서 표준편차 <output id="rail-sigma" for="rail-noise">1.0 m</output></label>
+  <input id="rail-noise" type="range" min="0.2" max="3" step="0.1" value="1">
+  <output class="rail-result" id="rail-result" for="rail-mode rail-noise"></output>
+</div>
+<script defer src="/assets/kalman/step-demo.js"></script>
