@@ -1,0 +1,22 @@
+title: Field Notes
+description: VLA, Sim-to-Real, SLAM, 센서 퓨전을 공부하고 연구하는 과정을 기록합니다.
+url: https://kongles.github.io
+timezone: Asia/Seoul
+markdown: kramdown
+collections:
+  research:
+    output: true
+    permalink: /research/:path/
+  papers:
+    output: true
+    permalink: /papers/:path/
+  concepts:
+    output: true
+    permalink: /concepts/:path/
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: note
+exclude:
+  - README.md

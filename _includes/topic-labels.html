@@ -1,0 +1,1 @@
+{% for key in include.topics %}<span>{{ site.data.topics[key].label | default: key | escape }}</span>{% endfor %}

@@ -1,0 +1,9 @@
+research:
+  filter: research
+  label: 연구 기록
+papers:
+  filter: paper
+  label: 논문 노트
+concepts:
+  filter: concept
+  label: 개념 정리

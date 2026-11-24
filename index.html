@@ -1,0 +1,112 @@
+---
+layout: default
+home: true
+---
+<main class="shell" id="main" tabindex="-1">
+    <section class="cover" aria-labelledby="cover-title">
+      <div class="viewport-bar">
+        <span class="dock-title" aria-hidden="true">Displays</span>
+        <div class="viewport-name"><span class="view-icon" aria-hidden="true"></span>3D View <span class="camera-mode">Orbit</span></div>
+        <div class="viewport-actions" hidden>
+          <button class="icon-button spin-button" type="button" aria-label="지구본 회전 일시 정지" title="지구본 회전 일시 정지"><span class="pause-icon" aria-hidden="true"></span></button>
+          <button class="icon-button replay-button" type="button" aria-label="인트로 다시 보기" title="인트로 다시 보기"><span aria-hidden="true">↻</span></button>
+        </div>
+      </div>
+
+      <div class="scene">
+        <canvas class="point-cloud" aria-hidden="true"></canvas>
+        <div class="display-panel">
+          <fieldset class="layers" hidden>
+            <legend>표시 레이어</legend>
+            <label><input type="checkbox" name="grid" checked> Grid</label>
+            <label><input type="checkbox" name="axes" checked> Axes</label>
+            <label><input type="checkbox" name="cloud" checked> PointCloud2</label>
+          </fieldset>
+          <div class="cover-copy">
+            <p class="cover-label">로보틱스 연구 노트</p>
+            <h1 id="cover-title">로봇이 세계를<br><em>이해하는 법.</em></h1>
+            <p class="cover-description">로봇이 주변을 인식하고, 지시를 이해하고, 배운 행동을 실제 환경에서 어떻게 수행하는지 공부합니다. 그 과정에서 읽은 논문과 실험, 다시 꺼내 볼 개념을 기록합니다.</p>
+            <a class="cover-link" href="#journal">연구 노트 보기 <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="viewport-footer" aria-hidden="true">
+        <span>Fixed frame <b>map</b></span>
+        <span>Topic <b>/globe/points</b></span>
+        <span>Style <b>Flat Squares</b></span>
+        <span class="source-label">모의 점군</span>
+      </div>
+    </section>
+
+    <div class="journal-layout">
+      <section id="journal" aria-labelledby="journal-title">
+        <div class="section-heading">
+          <h2 id="journal-title">연구 노트</h2>
+        </div>
+        <div class="journal-controls" hidden>
+          <div class="filters" role="group" aria-label="글 유형">
+            <button type="button" data-filter="all" aria-pressed="true">전체</button>
+            <button type="button" data-filter="research" aria-pressed="false">연구 기록</button>
+            <button type="button" data-filter="paper" aria-pressed="false">논문 노트</button>
+            <button type="button" data-filter="concept" aria-pressed="false">개념 정리</button>
+          </div>
+          <button class="active-topic" type="button" hidden></button>
+          <span class="visually-hidden" role="status" id="filter-status"></span>
+        </div>
+
+        <div class="entries">
+          {% assign notes = site.research | concat: site.papers | concat: site.concepts | sort: 'date' | reverse %}
+          {% for note in notes %}
+          <article class="entry" data-kind="{{ site.data.kinds[note.collection].filter }}" data-topics="{{ note.topics | join: ' ' | escape }}">
+            <a class="note-row" href="{{ note.url | relative_url }}">
+              <div class="entry-text">
+                <p class="entry-meta">
+                  <span>{{ site.data.kinds[note.collection].label }}</span>
+                  {% include topic-labels.html topics=note.topics %}
+                  {% if note.sample %}<span>작성 예시</span>{% endif %}
+                </p>
+                <h3>{{ note.title | escape }}</h3>
+                {% if note.summary %}<p class="entry-description">{{ note.summary | escape }}</p>{% endif %}
+              </div>
+              <span class="entry-icon" aria-hidden="true">↗</span>
+            </a>
+          </article>
+          {% endfor %}
+          <p class="empty-state" hidden>이 주제와 글 유형에 해당하는 노트가 없어요. 다른 글 유형을 선택해 보세요.</p>
+        </div>
+      </section>
+
+      <aside class="topics" id="topics" aria-labelledby="topics-title">
+        <h2 id="topics-title">연구 주제</h2>
+        <ul class="topic-list">
+          {% for pair in site.data.topics %}
+          <li><a href="#journal" data-topic-filter="{{ pair[0] }}"><span class="topic-mark" aria-hidden="true"></span><span><strong>{{ pair[1].label }}</strong><small>{{ pair[1].description }}</small></span><span class="topic-arrow" aria-hidden="true">↗</span></a></li>
+          {% endfor %}
+        </ul>
+      </aside>
+    </div>
+
+    <section id="projects" class="projects" aria-labelledby="projects-title">
+      <div class="section-heading"><h2 id="projects-title">프로젝트</h2><span class="sample-label">포트폴리오 예시</span></div>
+      <details class="project">
+        <summary>
+          <div class="entry-text">
+            <p class="entry-meta"><span>Sim-to-Real · VLA</span></p>
+            <h3>로봇 집기 정책의 Sim-to-Real 검증</h3>
+            <p class="entry-description">문제, 내 역할, 평가 결과와 데모를 한 페이지에 정리하는 프로젝트 사례</p>
+          </div>
+          <span class="entry-icon" aria-hidden="true">↗</span>
+        </summary>
+        <div class="entry-body">
+          <ul>
+            <li><strong>문제.</strong> 시뮬레이션과 실제 로봇의 집기 성공률 차이를 비교한다.</li>
+            <li><strong>내 역할.</strong> 직접 정한 실험 조건과 구현한 부분을 기록한다.</li>
+            <li><strong>결과와 데모.</strong> 성공률과 실패 유형, 실행 영상, 코드 링크를 함께 남긴다.</li>
+          </ul>
+          {% assign plan = site.research | where: 'relative_path', '_research/sim-to-real-note.md' | first %}
+          {% if plan %}<a href="{{ plan.url | relative_url }}" class="related-note">관련 실험 계획 보기 <span aria-hidden="true">↗</span></a>{% endif %}
+        </div>
+      </details>
+    </section>
+  </main>

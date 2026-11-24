@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<main class="shell" id="main" tabindex="-1">
+  <article class="note-page">
+    <a class="back-link" href="{{ '/' | relative_url }}#journal">← 연구 노트</a>
+    <header>
+      <p class="entry-meta">
+        <span>{{ site.data.kinds[page.collection].label }}</span>
+        {% include topic-labels.html topics=page.topics %}
+        {% if page.sample %}<span>작성 예시</span>{% endif %}
+      </p>
+      <h1>{{ page.title | escape }}</h1>
+      {% if page.date %}<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y.%m.%d' }}</time>{% endif %}
+    </header>
+    <div class="markdown-body">{{ content }}</div>
+  </article>
+</main>

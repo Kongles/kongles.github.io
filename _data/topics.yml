@@ -1,0 +1,12 @@
+vla:
+  label: VLA 모델
+  description: 이미지와 지시문에서 로봇 행동으로
+sim-to-real:
+  label: Sim-to-Real
+  description: 시뮬레이션에서 배운 정책의 실제 적용
+slam:
+  label: SLAM
+  description: 지도 작성과 위치 추정
+fusion:
+  label: 센서 퓨전
+  description: LiDAR, 카메라, IMU 관측 결합
