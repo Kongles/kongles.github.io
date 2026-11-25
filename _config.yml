@@ -7,6 +7,9 @@ collections:
   lectures:
     output: true
     permalink: /state-estimation/:name/
+  probability:
+    output: true
+    permalink: /probability-statistics/:name/
   research:
     output: true
     permalink: /research/:path/

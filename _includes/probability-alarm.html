@@ -1,0 +1,6 @@
+<div class="rail-demo" data-alarm-demo hidden>
+  <label for="obstacle-rate">직접 바꿔 보기 · 장애물이 있는 구간의 비율</label>
+  <input id="obstacle-rate" type="range" min="1" max="50" step="1" value="2" aria-valuetext="2퍼센트">
+  <output for="obstacle-rate" class="rail-result" aria-live="polite"></output>
+</div>
+<script defer src="{{ '/assets/probability/alarm.js' | relative_url }}"></script>
