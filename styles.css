@@ -180,3 +180,12 @@ details[open] .entry-icon { transform: rotate(90deg); color: var(--accent); }
 .rail-demo select, .rail-demo input { width: 100%; min-height: 2.2rem; font: inherit; accent-color: #80c9ff; }
 .rail-demo label { font-weight: 650; }
 .rail-result { padding-top: .45rem; border-top: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+.lecture-source, .lecture-nav { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+.lecture-source p { margin-top: .4rem; color: var(--muted); }
+.lecture-nav { display: flex; flex-wrap: wrap; gap: .6rem 1.5rem; }
+.lecture-nav a, .lecture-source a { text-decoration: underline; text-underline-offset: .2em; }
+.markdown-body figure.lecture-figure { margin: 1.6rem 0; }
+.lecture-figure img { display: block; width: 100%; border-radius: .3rem; }
+.lecture-figure figcaption { margin-top: .45rem; color: var(--muted); font-size: .92rem; }
+.markdown-body details.lecture-answer { padding: .7rem 1rem; border-left: 2px solid #8b9ba4; background: var(--surface); }
+.lecture-answer summary { font-weight: 650; }

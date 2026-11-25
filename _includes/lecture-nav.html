@@ -1,0 +1,14 @@
+<aside class="lecture-source" aria-label="교재 읽기">
+  <strong>교재와 함께 읽기</strong>
+  <p>Timothy D. Barfoot, <cite>State Estimation for Robotics</cite>, 2판. {{ page.reading | escape }} 쪽수는 2026년 9월 2일자 저자 초고의 인쇄 면수입니다. <a href="https://doi.org/10.1017/9781009299909">출판사에서 보기</a></p>
+</aside>
+<nav class="lecture-nav" aria-label="강의 이동">
+  <a href="{{ '/concepts/state-estimation/' | relative_url }}">전체 강의 목차</a>
+  {% assign ordered = site.lectures | sort: 'chapter' %}
+  {% for item in ordered %}
+    {% if item.chapter == page.chapter %}
+      {% unless forloop.first %}{% assign prev = forloop.index0 | minus: 1 %}<a href="{{ ordered[prev].url | relative_url }}">← {{ ordered[prev].chapter }}강 · {{ ordered[prev].short | escape }}</a>{% endunless %}
+      {% unless forloop.last %}{% assign nxt = forloop.index %}<a href="{{ ordered[nxt].url | relative_url }}">{{ ordered[nxt].chapter }}강 · {{ ordered[nxt].short | escape }} →</a>{% endunless %}
+    {% endif %}
+  {% endfor %}
+</nav>
