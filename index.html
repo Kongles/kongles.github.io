@@ -47,9 +47,9 @@ home: true
         <div class="journal-controls" hidden>
           <div class="filters" role="group" aria-label="글 유형">
             <button type="button" data-filter="all" aria-pressed="true">전체</button>
-            <button type="button" data-filter="research" aria-pressed="false">연구 기록</button>
-            <button type="button" data-filter="paper" aria-pressed="false">논문 노트</button>
-            <button type="button" data-filter="concept" aria-pressed="false">개념 정리</button>
+            {% for pair in site.data.kinds %}
+            <button type="button" data-filter="{{ pair[1].filter }}" aria-pressed="false">{{ pair[1].label | escape }}</button>
+            {% endfor %}
           </div>
           <button class="active-topic" type="button" hidden></button>
           <span class="visually-hidden" role="status" id="filter-status"></span>

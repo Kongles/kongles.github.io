@@ -8,7 +8,7 @@ RViz2 점군 지구본으로 시작하는 Kongles의 로보틱스 연구 블로�
 | --- | --- | --- |
 | 연구 기록 | [_research](_research) | [연구 기록 양식](_templates/research.md) |
 | 논문 노트 | [_papers](_papers) | [논문 노트 양식](_templates/papers.md) |
-| 개념 정리 | [_concepts](_concepts) | [개념 정리 양식](_templates/concepts.md) |
+| 개념 노트 | [_concepts](_concepts) | [개념 노트 양식](_templates/concepts.md) |
 
 1. 위 표에서 양식을 열고 GitHub의 **Copy raw file**로 내용을 복사합니다.
 2. 같은 줄의 폴더에서 **Add file → Create new file**을 누르고, 글마다 다른 파일 이름을 씁니다. 예를 들어 논문 노트에는 `openvla-reading.md`를 쓸 수 있습니다.
