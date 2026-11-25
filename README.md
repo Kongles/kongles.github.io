@@ -1,4 +1,4 @@
-# Field Notes
+# kongles world
 
 RViz2 점군 지구본으로 시작하는 Kongles의 로보틱스 연구 블로그입니다. [블로그 열기](https://kongles.github.io)
 

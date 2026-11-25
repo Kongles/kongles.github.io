@@ -67,7 +67,7 @@ button, summary { cursor: pointer; }
 .scene.is-ready .cover-copy { animation: reveal-cover .65s cubic-bezier(.2,.65,.25,1) both; }
 @keyframes reveal-cover { from { opacity: 0; transform: translateY(.85rem); } to { opacity: 1; transform: translateY(0); } }
 .cover-label { margin: 0 0 .75rem; color: #d3d3d3; font-size: .9rem; font-weight: 650; letter-spacing: .055em; }
-.cover h1 { margin: 0; font-size: clamp(2.5rem, 3.6vw, 3.45rem); line-height: 1.04; letter-spacing: -.075em; font-weight: 800; }
+.cover h1 { margin: 0; font-size: clamp(1.75rem, 2.2vw, 2.3rem); line-height: 1.22; letter-spacing: -.055em; font-weight: 800; }
 .cover h1 em { color: var(--accent); font-style: normal; }
 .cover-description { max-width: 22rem; margin: 1.4rem 0 1.5rem; color: #d1d1d1; font-size: .95rem; line-height: 1.8; }
 .cover-link { display: inline-flex; align-items: center; gap: .8rem; min-height: 2.75rem; padding: .5rem .8rem .5rem .95rem; border: 1px solid #a2a2a2; border-radius: .3rem; background: #e2e2e2; color: #222222; font-size: .87rem; font-weight: 700; }
@@ -140,7 +140,7 @@ details[open] .entry-icon { transform: rotate(90deg); color: var(--accent); }
   .layers { border-top: 1px solid #252525; }
   .viewport-footer { gap: .4rem .9rem; }
   .viewport-footer > :nth-child(3) { display: none; }
-  .cover h1 { font-size: clamp(2.45rem, 8.5vw, 3.6rem); }
+  .cover h1 { font-size: clamp(1.75rem, 5.2vw, 2.75rem); }
   .cover-label { margin-bottom: .55rem; }
   .cover-description { margin: 1rem 0 1.15rem; }
   .journal-layout { grid-template-columns: 1fr; gap: 1.7rem; margin-top: 2rem; }
