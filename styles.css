@@ -62,7 +62,7 @@ button, summary { cursor: pointer; }
 .layers legend { position: absolute; width: 1px; height: 1px; clip-path: inset(50%); overflow: hidden; }
 .layers label { display: inline-flex; align-items: center; gap: .38rem; min-height: 1.5rem; cursor: pointer; }
 .layers input { width: .85rem; height: .85rem; margin: 0; accent-color: #ebebeb; cursor: pointer; }
-.cover-copy { margin-block: auto; padding: 2.2rem clamp(1.25rem, 2.8vw, 2.3rem); }
+.cover-copy { margin-block: auto; padding: 2.2rem clamp(1.25rem, 2.4vw, 2.3rem); }
 .scene.is-intro .cover-copy { opacity: 0; transform: translateY(.85rem); pointer-events: none; }
 .scene.is-ready .cover-copy { animation: reveal-cover .65s cubic-bezier(.2,.65,.25,1) both; }
 @keyframes reveal-cover { from { opacity: 0; transform: translateY(.85rem); } to { opacity: 1; transform: translateY(0); } }
