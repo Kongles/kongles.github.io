@@ -5,6 +5,7 @@
   const topicButton = controls.querySelector('.active-topic');
   const status = controls.querySelector('[role="status"]');
   const entries = [...document.querySelectorAll('.entry')];
+  const kindLabels = document.querySelectorAll('.entry-kind');
   const empty = document.querySelector('.empty-state');
   const journalHeading = document.querySelector('#journal-title');
   let kind = 'all';
@@ -12,6 +13,7 @@
 
   function updateFilters() {
     buttons.forEach(button => button.setAttribute('aria-pressed', String(kind === button.dataset.filter)));
+    kindLabels.forEach(label => { label.hidden = kind !== 'all'; });
     const activeLink = topicLinks.find(link => link.dataset.topicFilter === topic);
     topicLinks.forEach(link => {
       if (link === activeLink) link.setAttribute('aria-current', 'true');
